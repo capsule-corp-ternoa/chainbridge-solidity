@@ -52,9 +52,9 @@ contract ERC20Handler is IDepositExecute, HandlerHelpers, ERC20Safe {
             _setResource(initialResourceIDs[i], initialContractAddresses[i]);
         }
 
-        for (uint256 i = 0; i < burnableContractAddresses.length; i++) {
-            _setBurnable(burnableContractAddresses[i]);
-        }
+        // for (uint256 i = 0; i < burnableContractAddresses.length; i++) {
+        //     _setBurnable(burnableContractAddresses[i]);
+        // }
     }
 
     /**
