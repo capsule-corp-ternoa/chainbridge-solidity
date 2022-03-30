@@ -398,7 +398,7 @@ contract Bridge is Pausable, AccessControl, SafeMath {
         @notice Hash of {data} must equal proposal's {dataHash}.
         @notice Emits {ProposalEvent} event with status {Executed}.
      */
-    function executeProposal(uint8 chainID, uint64 depositNonce, bytes calldata data, bytes32 resourceID) external onlyRelayers whenNotPaused {
+    function executeProposal(uint8 chainID, uint64 depositNonce, bytes calldata data, bytes32 resourceID) external whenNotPaused {
         address handler = _resourceIDToHandlerAddress[resourceID];
         uint72 nonceAndID = (uint72(depositNonce) << 8) | uint72(chainID);
         bytes32 dataHash = keccak256(abi.encodePacked(handler, data));
